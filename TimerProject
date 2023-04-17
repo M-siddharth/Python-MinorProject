@@ -1,0 +1,97 @@
+import time
+from tkinter import *
+from tkinter import messagebox
+
+clockTime=0;clock=1;settime=0;ch=0
+
+clockwindow = Tk()
+clockwindow.geometry("500x500")
+clockwindow.title("countdown Timer")
+clockwindow.configure(background='Green')
+
+hour = StringVar()
+minute = StringVar()
+second = StringVar()
+
+hour.set("00")
+minute.set("00")
+second.set("00")
+
+hourtextbox = Entry(clockwindow,width=3, font=("calibri",20,""),textvariable=hour)
+minutetextbox = Entry(clockwindow,width=3, font=("calibri",20,""),textvariable=minute)
+secondtextbox = Entry(clockwindow,width=3, font=("calibri",20,""),textvariable=second)
+
+hourtextbox.place(x=170, y=180)
+minutetextbox.place(x=220, y=180)
+secondtextbox.place(x=270, y=180)
+
+def runTimer():
+    global clockTime
+    global settime
+    global ch
+    try:
+        clockTime = int(hour.get())*3600 + int(minute.get())*60 + int(second.get())
+
+        
+        if(ch==0):
+            settime=clockTime
+            ch=1
+       
+    except:
+        print("Incorect values")
+   
+    while(clockTime > -1):
+        totalminutes,totalseconds =divmod(clockTime,60)
+
+        totalhours = 0
+        if(totalminutes >60):
+           totalhours , totalminutes = divmod(totalminutes,60)
+           
+        hour.set("{0:2d}".format(totalhours))
+        minute.set("{0:2d}".format(totalminutes))
+        second.set("{0:2d}".format(totalseconds))
+
+        clockwindow.update()
+        time.sleep(1)
+        
+        if(clockTime == 0):
+           messagebox.showinfo("","Time's up!")
+        if(clock!=0):
+            clockTime -= 1
+def pause(): #pauses the clock
+    global clock
+    clock=0
+    
+def resumetime(): #resumes the clock
+    global clock
+    clock=1
+
+def stop(): #terminates the timer 
+    global clockTime
+    clockTime=0
+
+def restart(): #restarts to entered time
+    global clockTime
+    global settime
+    global ch
+    ch=2
+    clockTime=settime+1
+    
+    
+
+settimebutton = Button(clockwindow , text='Set Time',bd='5' , command=runTimer)
+settimebutton.place(relx=0.5, rely=0.5 ,anchor=CENTER)
+
+setpausebutton = Button(clockwindow , text='Pause' ,bd='5' ,command=pause)
+setpausebutton.place(relx=0.3, rely=0.6 ,anchor=CENTER)
+
+setresumebutton = Button(clockwindow , text='Resume',bd='5' ,command=resumetime)
+setresumebutton.place(relx=0.6, rely=0.6 ,anchor=W)
+
+setstopbutton = Button(clockwindow , text='Stop' ,bd='5' ,command=stop)
+setstopbutton.place(relx=0.3,rely=0.7,anchor=CENTER)
+
+setrestartbutton = Button(clockwindow , text='Restart', bd='5' ,command=restart)
+setrestartbutton.place(relx=0.6 ,rely=0.7,anchor=W)
+
+clockwindow.mainloop()
