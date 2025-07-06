@@ -1,61 +1,49 @@
-This is a simple Countdown Timer built using Python's tkinter library. The timer lets users set a custom time in hours, minutes,
-and seconds and provides controls to start, pause, resume, stop, and restart the countdown.
+# ⏳ Countdown Timer using Tkinter (Python GUI)
 
-📌 Features
+This project is a **GUI-based Countdown Timer** developed using Python's `tkinter` library. It allows users to set a timer in hours, minutes, and seconds, and offers intuitive controls to **start**, **pause**, **resume**, **stop**, and **restart** the countdown.
 
-Set a custom countdown time.
+---
 
-Start the timer and view it decrement in real-time.
+## 🧰 Features
 
-Pause and resume functionality.
+✅ Set custom countdown time  
+✅ Real-time countdown display  
+✅ GUI controls for:
+- Start (`Set Time`)
+- Pause
+- Resume
+- Stop
+- Restart
 
-Stop the timer anytime.
+✅ Visual alert on completion  
+✅ Clean, user-friendly interface with a green background
 
-Restart the timer from the originally set value.
+---
 
-Visual notification (popup) when time is up.
+## 🛠 Requirements
 
-Simple and colorful GUI (green background).
+- Python 3.x
+- `tkinter` (usually included with Python)
 
-🛠️ Requirements
-Python 3.x
+---
 
-tkinter (usually comes pre-installed with Python)
+## 🚀 Getting Started
 
-🚀 How to Run
-Clone or download the project.
+### 🔹 Run the App
 
-Make sure Python is installed on your system.
+1. Save the code as `timer.py`  
+2. Open terminal or command prompt  
+3. Run the script:
 
-Run the script:
+```bash
+python timer.py
+```
+<h3>🖼️ Timer UI Screenshot 1</h3>
+<img src="https://github.com/user-attachments/assets/8b41b3a0-5607-4d76-b9b0-82581888f805" alt="Timer Screenshot 1" width="450"/>
 
-bash
-Copy
-Edit
-python countdown_timer.py
-Use the GUI to:
-
-Enter the hours, minutes, and seconds.
-
-Click Set Time to start the countdown.
-
-Use Pause, Resume, Stop, or Restart as needed.
+<h3>🖼️ Timer UI Screenshot 2</h3>
+<img src="https://github.com/user-attachments/assets/88adf64f-510e-4263-95ea-623f48e40905" alt="Timer Screenshot 2" width="450"/>
 
 
-🔧 Code Highlights
-Uses time.sleep(1) and clockwindow.update() for real-time countdown.
 
-StringVar() to bind Entry widgets dynamically.
 
-Message box alert when time is up.
-
-Uses global variables to track time and control timer flow.
-
-💡 Future Improvements (Optional Ideas)
-Add sound alert when time ends.
-
-Input validation (only accept numeric input).
-
-Improve UI with custom styles or ttk.
-
-Save timer history or preset values.
