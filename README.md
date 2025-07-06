@@ -1,6 +1,8 @@
-This is a simple Countdown Timer built using Python's tkinter library. The timer lets users set a custom time in hours, minutes, and seconds and provides controls to start, pause, resume, stop, and restart the countdown.
+This is a simple Countdown Timer built using Python's tkinter library. The timer lets users set a custom time in hours, minutes,
+and seconds and provides controls to start, pause, resume, stop, and restart the countdown.
 
 📌 Features
+
 Set a custom countdown time.
 
 Start the timer and view it decrement in real-time.
@@ -39,23 +41,7 @@ Click Set Time to start the countdown.
 
 Use Pause, Resume, Stop, or Restart as needed.
 
-📂 Project Structure
-graphql
-Copy
-Edit
-countdown_timer.py      # Main Python script with GUI and timer logic
-README.md               # Project documentation
-📸 UI Preview
-pgsql
-Copy
-Edit
-+--------------------------+
-|     Countdown Timer      |
-|  [HH] : [MM] : [SS]      |
-|        Set Time          |
-| Pause   Resume           |
-| Stop    Restart          |
-+--------------------------+
+
 🔧 Code Highlights
 Uses time.sleep(1) and clockwindow.update() for real-time countdown.
 
